@@ -78,7 +78,7 @@ var pokemonRepository = (function() {
 		//var typeElement = $('<p></p>');
 
 		//clear contents
-		$modalContainer.innerHTML = '';
+		$modalContainer.empty();
 
 		//add contents
 		modal.append(closeButton);
