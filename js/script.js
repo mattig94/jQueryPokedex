@@ -95,18 +95,14 @@ var pokemonRepository = (function() {
 	}
 
 	//closing modal
-	$('.modal-close').click(function() {
-		hideModal();
-	});
-
-	$('#modal-container').click(e => {
-		var target = e.target;
-		if (target === $('#modal-container')) {
+	$('body').click(e => {
+		var target = $(e.target);
+		if (target.is($('.modal-close'))) {
 			hideModal();
 		}
 	});
 
-	$('#modal-container').keydown(e => {
+	$('body').keydown(e => {
 		if (e.which === 27 && $('#modal-container').hasClass('is-visible')) {
 			hideModal();
 		}
