@@ -24,8 +24,9 @@ li {
 
 /*Classes*/
 .main-pokemon-button {
-	background: lightcyan;
-	border: 1px solid lightgrey;
+  background-color: #17a2b8;
+	border-color: #fff;
+  color: #fff;
 	font-family: var(--handwriting);
 	font-size: 22px;
 	font-weight: var(--heavy-font);
@@ -34,58 +35,35 @@ li {
 	width: 100%;
 }
 
-.main-pokemon-button:hover, :focus {
+.main-pokemon-button:focus {
+  background-color: #17a2b8;
+  border-color: #fff;
+  color: #fff;
+  font-family: var(--handwriting);
+  font-size: 22px;
+  font-weight: var(--heavy-font);
+  line-height: 2.5;
+  outline: none;
+  text-align: left;
+  width: 100%;
+}
+
+.main-pokemon-button:hover {
 	background: cyan;
 	border: 1px solid grey;
+  outline: none;
 }
 
 .pokemon-list {
 	width: 50%;
 }
 
-.modal {
+.modal-body {
   margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: #fff;
-  padding: 15px;
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
-}
-
-.modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: #777;
-  text-decoration: underline;
 }
 
 /*Ids*/
-#modal-container {
-  display: none;
-}
 
-#modal-container.is-visible {
-  display: block;
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);  
-  /* to show it above other content */
-  z-index: 999; 
-  /* to allow scrolling if the screen is not high enough*/
-  overflow: auto; 
-  /* this is used to center the modal */
-  display: grid;
-  text-align: center;
-}
 
 /*Media Queries -- Breaking points = 768px, 992pxpx, 1200px*/
 @media all and (min-width: 500px) and (max-width: 992px) {
