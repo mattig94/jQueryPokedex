@@ -15,7 +15,9 @@ var pokemonRepository = (function() {
 	function addListItem(pokemon) {
 		var $pokemonList = $('.pokemon-list');
 		var nameButton = $(
-			'<button type="button" class="main-pokemon-button btn btn-info list-group-item list-group-item-action text-capitalize" data-toggle="modal" data-target="#pokemon-details">' + pokemon.name + '</button>'
+			'<button type="button" class="main-pokemon-button btn btn-info list-group-item list-group-item-action text-capitalize" data-toggle="modal" data-target="#pokemon-details">' +
+				pokemon.name +
+				'</button>'
 		);
 		$pokemonList.append(nameButton);
 		//open modal
@@ -54,7 +56,6 @@ var pokemonRepository = (function() {
 				item.imageUrl = details.sprites.front_default;
 				item.height = details.height;
 				item.weight = details.weight;
-				item.types = Object.keys(details.types);
 			})
 			.catch(function(e) {
 				console.log(e);
@@ -70,9 +71,8 @@ var pokemonRepository = (function() {
 			'<img src="' + item.imageUrl + '" alt="Picture of ' + item.name + '">'
 		);
 		var nameTitle = $('<h2 class="text-capitalize">' + item.name + '</h2>');
-		var heightElement = $('<p>Height: ' + item.height + '</p>');
-		var weightElement = $('<p>Weight: ' + item.weight + '</p>');
-		//var typeElement = $('<p></p>');
+		var heightElement = $('<p>Height: ' + item.height / 10 + ' meters</p>');
+		var weightElement = $('<p>Weight: ' + item.weight / 10 + ' kilograms</p>');
 
 		//clear contents
 		$modalBody.empty();
@@ -82,7 +82,6 @@ var pokemonRepository = (function() {
 		modal.append(nameTitle);
 		modal.append(heightElement);
 		modal.append(weightElement);
-		//modal.append(typeElement);
 		$modalBody.append(modal);
 	}
 
